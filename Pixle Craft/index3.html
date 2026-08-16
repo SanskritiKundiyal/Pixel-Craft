@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PixelCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;700&family=Pacifico&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">PixelCraft</div>
+    <div class="header-buttons">
+      <button id="reset" class="btn outline">Reset</button>
+      <button id="export" class="btn">Export PNG</button>
+    </div>
+  </header>
+
+  <div class="app">
+    <aside>
+      <label>Text bar</label>
+      <input id="textInput" type="text" placeholder="Write something...">
+      <select id="fontSelect">
+        <option value="Anton">Anton</option>
+        <option value="Inter">Inter</option>
+        <option value="Playfair Display">Playfair Display</option>
+        <option value="Pacifico">Pacifico</option>
+        <option value="Bebas Neue">Bebas Neue</option>
+      </select>
+      <input id="textColor" type="color" value="#fefae0">
+      <button id="addText" class="btn">Add Text</button>
+
+      <label>Transform</label>
+      <button class="btn outline" data-rotate="90">Rotate 90°</button>
+      <button class="btn outline" data-rotate="-90">Rotate -90°</button>
+
+      <div class="row">
+        <button class="btn outline" data-flip="x">Flip Horizontal</button>
+        <button class="btn outline" data-flip="y">Flip Vertical</button>
+      </div>
+
+      <label>Scale</label>
+      <input id="scale" type="range" min=".5" max="2" step=".05" value="1">
+
+      <label>Pinterest Stickers</label>
+      <div id="pinterestStickers" class="sticker-grid"></div>
+
+      <label>Emoji Stickers</label>
+      <div class="sticker-grid">
+        <button class="sticker emoji" data-emoji="🌿">🌿</button>
+        <button class="sticker emoji" data-emoji="🍄">🍄</button>
+        <button class="sticker emoji" data-emoji="☀️">☀️</button>
+        <button class="sticker emoji" data-emoji="🍃">🍃</button>
+        <button class="sticker emoji" data-emoji="🪨">🪨</button>
+        <button class="sticker emoji" data-emoji="✨">✨</button>
+      </div>
+    </aside>
+
+    <main>
+      <div class="background-title">PIXELCRAFT</div>
+
+      <div id="dropzone">
+        <strong>SELECT HIGH-RES IMAGE</strong>
+        <small>Click or drag image here</small>
+        <input id="fileInput" type="file" accept="image/*">
+      </div>
+
+      <canvas id="canvas"></canvas>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
